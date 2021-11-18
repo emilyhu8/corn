@@ -17,20 +17,24 @@
         >
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="60sp"
+            android:layout_height="65sp"
+            android:textSize="45sp"
+            android:textColor="@color/cornell_red"
             android:text="@string/helpful_links"
             />
         <TextView
             android:layout_width="match_parent"
+            android:textColor="@color/black"
             android:id="@+id/link1"
-            android:layout_height="30sp"
+            android:layout_height="45sp"
             android:text="@string/link1"
             android:linksClickable="true"
             android:autoLink="web"
             />
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="30sp"
+            android:textColor="@color/black"
+            android:layout_height="45sp"
             android:id="@+id/link2"
             android:text="@string/link2"
             android:linksClickable="true"
@@ -38,7 +42,8 @@
             />
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="30sp"
+            android:textColor="@color/black"
+            android:layout_height="45sp"
             android:id="@+id/link3"
             android:text="@string/link3"
             android:linksClickable="true"
@@ -46,12 +51,51 @@
             />
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="30sp"
+            android:textColor="@color/black"
+            android:layout_height="45sp"
             android:id="@+id/link4"
             android:text="@string/link4"
             android:linksClickable="true"
             android:autoLink="web"
             />
+        <TextView
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:layout_height="45sp"
+            android:id="@+id/link5"
+            android:text="@string/link5"
+            android:linksClickable="true"
+            android:autoLink="web"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:layout_height="45sp"
+            android:id="@+id/link6"
+            android:text="@string/link6"
+            android:linksClickable="true"
+            android:autoLink="web"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:layout_height="45sp"
+            android:id="@+id/link7"
+            android:text="@string/link7"
+            android:linksClickable="true"
+            android:autoLink="web"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:layout_height="45sp"
+            android:id="@+id/link8"
+            android:text="@string/link8"
+            android:linksClickable="true"
+            android:autoLink="web"
+            />
+
+
     </LinearLayout>
 
 

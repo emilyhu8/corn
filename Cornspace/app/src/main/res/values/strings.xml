@@ -8,5 +8,9 @@
     <string name="link2"><a href ="https://css.adminapps.cornell.edu/psp/cuselfservice/EMPLOYEE/HRMS/c/SA_LEARNER_SERVICES.SSS_STUDENT_CENTER.GBL?">css.adminapps.cornell.edu</a></string>
     <string name="link3"><a href ="https://classes.cornell.edu/scheduler/roster/SP22">classes.cornell.edu</a></string>
     <string name="link4"><a href ="https://dailycheck.cornell.edu/login">dailycheck.cornell.edu</a></string>
+    <string name="link5"><a href ="https://canvas.cornell.edu">canvas.cornell.edu</a></string>
+    <string name="link6"><a href ="https://it.cornell.edu">it.cornell.edu</a></string>
+    <string name="link7"><a href ="https://cmsx.cs.cornell.edu/web/guest/">cmsx.cs.cornell.edu</a></string>
+    <string name="link8"><a href ="https://www.gradescope.com">gradescope.com</a></string>
     <string name="helpful_links">Helpful Links</string>
 </resources>
