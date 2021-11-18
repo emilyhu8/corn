@@ -28,6 +28,7 @@ class EventAdapter(private val events: List<Event>) : RecyclerView.Adapter<Event
         holder.eventDetails.text=event.details
 
 
+
         val context = holder.itemView.context
         holder.itemView.setOnClickListener {
             val noteIntent = Intent(context, EditEventActivity::class.java).apply {

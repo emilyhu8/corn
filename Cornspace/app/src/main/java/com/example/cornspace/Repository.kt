@@ -30,7 +30,7 @@ class Repository private constructor(){
         private val client = OkHttpClient()
 
         fun fetchEventsList(successHandler: ((List<Event>) -> Unit)? = null) {
-            val requestGet = Request.Builder().url(BASE_URL + "posts/").build()
+            val requestGet = Request.Builder().url(BASE_URL + "events/").build()
             client.newCall(requestGet).enqueue(object: Callback {
                 override fun onFailure(call: Call, e: IOException) {
                     e.printStackTrace()

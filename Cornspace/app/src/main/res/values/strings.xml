@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Corn space</string>
+    <string name="new_event">New Event</string>
+    <string name="edit_name">Edit Name</string>
+    <string name="hello">Hello!</string>
+    <string name="joke_of_the_day">Joke of the day:</string>
 </resources>
