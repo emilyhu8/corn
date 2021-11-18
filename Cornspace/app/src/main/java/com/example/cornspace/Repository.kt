@@ -21,8 +21,8 @@ class Repository private constructor(){
         private const val BASE_URL = "http://143.198.115.54:8080/"
         private val moshi = Moshi.Builder().addLast(KotlinJsonAdapterFactory()).build()
         private val eventJsonAdapter = moshi.adapter(Event::class.java)
-        private val eventListType = Types.newParameterizedType(List::class.java, Event::class.java)
-        private val eventListJsonAdapter : JsonAdapter<List<Event>> = moshi.adapter(eventListType)
+        //private val eventListType = Types.newParameterizedType(List::class.java, Event::class.java)
+        //private val eventListJsonAdapter : JsonAdapter<List<Event>> = moshi.adapter(eventListType)
 
 
         var localEventList = mutableListOf<Event>()
@@ -31,6 +31,7 @@ class Repository private constructor(){
 
         fun fetchEventsList(successHandler: ((List<Event>) -> Unit)? = null) {
             val requestGet = Request.Builder().url(BASE_URL + "events/").build()
+            /*
             client.newCall(requestGet).enqueue(object: Callback {
                 override fun onFailure(call: Call, e: IOException) {
                     e.printStackTrace()
@@ -52,6 +53,8 @@ class Repository private constructor(){
                     }
                 }
             })
+
+             */
         }
 
         fun updateEvent(newEvent: Event) {

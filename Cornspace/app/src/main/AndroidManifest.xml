@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CornSpace">
         <activity
+            android:name=".LinksActivity"
+            android:exported="false" />
+        <activity
             android:name=".EditEventActivity"
             android:exported="false" />
         <activity
