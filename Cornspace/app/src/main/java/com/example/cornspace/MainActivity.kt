@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var joke: TextView
     private lateinit var saveName: Button
     private lateinit var linkButton: Button
+    private lateinit var eventButton: Button
     private lateinit var tabs: TabLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         joke=findViewById(R.id.joke)
         saveName=findViewById(R.id.saveName)
         linkButton=findViewById(R.id.linkButton)
+        eventButton=findViewById(R.id.eventButton)
         tabs=findViewById(R.id.tabLayout)
 
 
@@ -38,6 +40,12 @@ class MainActivity : AppCompatActivity() {
             val intent= Intent(this, LinksActivity::class.java)
             startActivity(intent)
         }
+
+        eventButton.setOnClickListener{
+            val intent=Intent(this, EventsActivity::class.java)
+            startActivity(intent)
+        }
+
         tabs.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
 
