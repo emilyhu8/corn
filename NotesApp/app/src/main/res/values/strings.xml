@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Notes App</string>
+    <string name="edit_title">Edit title</string>
+    <string name="edit_body">Edit body</string>
+    <string name="cloud_notes">Cloud Notes</string>
+    <string name="new_note">New Note</string>
+    <string name="local_notes">Local Notes</string>
+    <string name="save_note">Save Note</string>
+</resources>

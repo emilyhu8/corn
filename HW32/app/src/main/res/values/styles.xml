@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="SeekBarRedColor"
+        parent="Widget.AppCompat.SeekBar">
+        <item name="colorAccent">#E66E6E</item>
+    </style>
+
+    <style name="SeekBarGreenColor"
+        parent="Widget.AppCompat.SeekBar">
+        <item name="colorAccent">#B4E682</item>
+    </style>
+
+    <style name="SeekBarBlueColor"
+        parent="Widget.AppCompat.SeekBar">
+        <item name="colorAccent">#7FC9DF</item>
+    </style>
+</resources>
