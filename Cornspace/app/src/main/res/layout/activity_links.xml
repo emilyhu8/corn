@@ -18,27 +18,39 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="60sp"
-            android:text="Helpful Links"
+            android:text="@string/helpful_links"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/link1"
+            android:layout_height="30sp"
+            android:text="@string/link1"
+            android:linksClickable="true"
+            android:autoLink="web"
             />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="30sp"
-            android:text="Link 1"
+            android:id="@+id/link2"
+            android:text="@string/link2"
+            android:linksClickable="true"
+            android:autoLink="web"
             />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="30sp"
-            android:text="Link 2"
+            android:id="@+id/link3"
+            android:text="@string/link3"
+            android:linksClickable="true"
+            android:autoLink="web"
             />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="30sp"
-            android:text="Link 3"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="30sp"
-            android:text="Link 4"
+            android:id="@+id/link4"
+            android:text="@string/link4"
+            android:linksClickable="true"
+            android:autoLink="web"
             />
     </LinearLayout>
 

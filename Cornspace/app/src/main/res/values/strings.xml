@@ -4,4 +4,9 @@
     <string name="edit_name">Edit Name</string>
     <string name="hello">Hello!</string>
     <string name="joke_of_the_day">Joke of the day:</string>
+    <string name="link1"><a href ="https://www.studentessentials.cornell.edu">studentessentials.cornell.edu</a></string>
+    <string name="link2"><a href ="https://css.adminapps.cornell.edu/psp/cuselfservice/EMPLOYEE/HRMS/c/SA_LEARNER_SERVICES.SSS_STUDENT_CENTER.GBL?">css.adminapps.cornell.edu</a></string>
+    <string name="link3"><a href ="https://classes.cornell.edu/scheduler/roster/SP22">classes.cornell.edu</a></string>
+    <string name="link4"><a href ="https://dailycheck.cornell.edu/login">dailycheck.cornell.edu</a></string>
+    <string name="helpful_links">Helpful Links</string>
 </resources>
