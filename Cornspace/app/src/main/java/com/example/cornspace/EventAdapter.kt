@@ -8,30 +8,33 @@ import android.widget.DatePicker
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class EventAdapter(private val events: List<Event>) : RecyclerView.Adapter<EventAdapter.ViewHolder>() {
-    class ViewHolder internal constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class EventAdapter(private val events: MutableList<Event>) : RecyclerView.Adapter<EventAdapter.MyViewHolder>() {
+
+    class MyViewHolder internal constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val eventName: TextView=itemView.findViewById(R.id.eventName)
         val eventLocation: TextView=itemView.findViewById(R.id.eventLocation)
         val eventDetails: TextView=itemView.findViewById(R.id.eventDetails)
-        val eventDate: DatePicker=itemView.findViewById(R.id.eventDate)
+        val eventDate: TextView=itemView.findViewById(R.id.eventDate)
     }
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.cell_event, parent, false) as View
-        return ViewHolder(view)
+        return MyViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: EventAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val event = events[position]
         holder.eventName.text=event.name
         holder.eventLocation.text = event.location
         holder.eventDetails.text=event.details
+        holder. eventDate.text=event.date
 
 
 
         val context = holder.itemView.context
         holder.itemView.setOnClickListener {
             val noteIntent = Intent(context, EditEventActivity::class.java).apply {
+                putExtra("position", position)
                 putExtra("name", event.name)
                 putExtra("location", event.location)
                 putExtra("details", event.details)
