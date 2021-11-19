@@ -1,5 +1,6 @@
 package com.example.cornspace
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -46,6 +47,14 @@ class EventsActivity : AppCompatActivity() {
             eventList[position] = Event( name, location, details, date)
             eventAdapter.notifyItemChanged(position)
 
+        }
+
+        newEvent.setOnClickListener{
+            eventList.add(Event(" "," "," "," "))
+            val intent= Intent(this, EditEventActivity::class.java).apply{
+                putExtra("position", eventList.size)
+            }
+            startActivity(intent)
         }
     }
     private fun populateEventList() {

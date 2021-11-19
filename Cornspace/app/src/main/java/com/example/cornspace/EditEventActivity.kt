@@ -56,19 +56,19 @@ class EditEventActivity : AppCompatActivity() {
             val input3 = editDetails?.text.toString().trim()
             val input4 = editDate?.text.toString().trim()
             if (input1.isNullOrBlank()==false) {
-                inputName=editName.text.toString()
+                inputName=input1
             }
             if (input2.isNullOrBlank()==false) {
-                 inputLocation=editLocation.text.toString()
+                 inputLocation=input2
             }
             if (input3.isNullOrBlank()==false) {
-                 inputDetails=editDetails.text.toString()
+                 inputDetails=input3
             }
             if (input4.isNullOrBlank()==false) {
-                inputDate=editDate.text.toString()
+                inputDate=input4
             }
 
-            val intent= Intent(this, MainActivity::class.java).apply{
+            val intent= Intent(this, EventsActivity::class.java).apply{
                 putExtra("position", position)
                 putExtra("name", inputName)
                 putExtra("location", inputLocation)
