@@ -12,6 +12,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <com.google.android.material.tabs.TabItem
             android:layout_height="match_parent"
             android:layout_width="wrap_content"
@@ -31,13 +32,15 @@
     </com.google.android.material.tabs.TabLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="700dp"
         android:paddingTop="50dp"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tabLayout"
         android:orientation="vertical"
         android:gravity="center_horizontal"
         android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:background="@color/colorPrimary"
         >
         <TextView
             android:layout_width="wrap_content"
@@ -45,81 +48,120 @@
             android:textSize="45sp"
             android:textColor="@color/cornell_red"
             android:text="@string/helpful_links"
+            android:background="@drawable/rounded_corners"
             />
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_width="24sp"
+            android:layout_height="24sp"
+            android:src="@drawable/ic_link"/>
+
         <TextView
+            android:layout_marginTop="10dp"
+            android:paddingTop="10dp"
+            android:gravity="center"
             android:layout_width="match_parent"
-            android:textColor="@color/black"
+            android:textColor="@color/ColorWhite"
             android:id="@+id/link1"
             android:layout_height="45sp"
             android:text="@string/link1"
             android:linksClickable="true"
             android:autoLink="web"
+            android:textSize="20sp"
+            android:layout_gravity="center_horizontal"
             />
+
         <TextView
-            android:layout_width="match_parent"
-            android:textColor="@color/black"
-            android:layout_height="45sp"
             android:id="@+id/link2"
-            android:text="@string/link2"
-            android:linksClickable="true"
-            android:autoLink="web"
-            />
-        <TextView
             android:layout_width="match_parent"
-            android:textColor="@color/black"
+            android:layout_height="45sp"
+            android:layout_gravity="center_horizontal"
+            android:autoLink="web"
+            android:gravity="center"
+            android:linksClickable="true"
+            android:paddingTop="10dp"
+            android:text="@string/link2"
+            android:textColor="@color/ColorWhite"
+            android:textSize="20sp" />
+
+        <TextView
+            android:paddingTop="10dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:textColor="@color/ColorWhite"
             android:layout_height="45sp"
             android:id="@+id/link3"
             android:text="@string/link3"
             android:linksClickable="true"
             android:autoLink="web"
+            android:textSize="20sp"
+            android:layout_gravity="center_horizontal"
             />
         <TextView
+            android:paddingTop="10dp"
+            android:gravity="center"
             android:layout_width="match_parent"
-            android:textColor="@color/black"
+            android:textColor="@color/ColorWhite"
             android:layout_height="45sp"
             android:id="@+id/link4"
             android:text="@string/link4"
             android:linksClickable="true"
             android:autoLink="web"
+            android:textSize="20sp"
+            android:layout_gravity="center_horizontal"
             />
         <TextView
+            android:paddingTop="10dp"
+            android:gravity="center"
             android:layout_width="match_parent"
-            android:textColor="@color/black"
+            android:textColor="@color/ColorWhite"
             android:layout_height="45sp"
             android:id="@+id/link5"
             android:text="@string/link5"
             android:linksClickable="true"
             android:autoLink="web"
+            android:textSize="20sp"
+            android:layout_gravity="center_horizontal"
             />
         <TextView
+            android:paddingTop="10dp"
+            android:gravity="center"
             android:layout_width="match_parent"
-            android:textColor="@color/black"
+            android:textColor="@color/ColorWhite"
             android:layout_height="45sp"
             android:id="@+id/link6"
             android:text="@string/link6"
             android:linksClickable="true"
             android:autoLink="web"
+            android:textSize="20sp"
+            android:layout_gravity="center_horizontal"
             />
         <TextView
+            android:paddingTop="10dp"
+            android:gravity="center"
             android:layout_width="match_parent"
-            android:textColor="@color/black"
+            android:textColor="@color/ColorWhite"
             android:layout_height="45sp"
             android:id="@+id/link7"
             android:text="@string/link7"
             android:linksClickable="true"
             android:autoLink="web"
+            android:textSize="20sp"
+            android:layout_gravity="center_horizontal"
             />
         <TextView
+            android:paddingTop="10dp"
+            android:gravity="center"
             android:layout_width="match_parent"
-            android:textColor="@color/black"
+            android:textColor="@color/ColorWhite"
             android:layout_height="45sp"
             android:id="@+id/link8"
             android:text="@string/link8"
             android:linksClickable="true"
             android:autoLink="web"
+            android:textSize="20sp"
+            android:layout_gravity="center_horizontal"
             />
-
-
     </LinearLayout>
 
 
