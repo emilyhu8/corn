@@ -29,7 +29,7 @@ class EventsActivity : AppCompatActivity() {
         newEvent=findViewById(R.id.newEventButton)
 
         //populateEventList()
-        for (i in eventList.indices)
+        for (i in names.indices)
             eventList.add(Event(names[i], locations[i], details[i], dates[i]))
 
         val eventAdapter=EventAdapter(eventList)
