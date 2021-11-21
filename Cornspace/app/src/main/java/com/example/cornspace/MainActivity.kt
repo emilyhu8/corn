@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var saveName: Button
     private lateinit var linkButton: Button
     private lateinit var eventButton: Button
-    private lateinit var tabs: TabLayout
+    private lateinit var noteButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +28,8 @@ class MainActivity : AppCompatActivity() {
         saveName=findViewById(R.id.saveName)
         linkButton=findViewById(R.id.linkButton)
         eventButton=findViewById(R.id.eventButton)
-        tabs=findViewById(R.id.tabLayout)
+        noteButton=findViewById(R.id.noteButton)
+
 
 
         saveName.setOnClickListener{
@@ -46,17 +47,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        tabs.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-            override fun onTabSelected(tab: TabLayout.Tab?) {
+        noteButton.setOnClickListener{
 
-            }
+        }
 
-            override fun onTabUnselected(tab: TabLayout.Tab?) {
-            }
 
-            override fun onTabReselected(tab: TabLayout.Tab?) {
-            }
-        })
+
 
 
 
