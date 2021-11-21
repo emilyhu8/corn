@@ -43,18 +43,20 @@ class EventsActivity : AppCompatActivity() {
         val date=intent.extras?.getString("date")
         val position = intent.extras?.getInt("position")
 
-        if (name != null && position != null && details!=null && date!=null) {
-            eventList[position] = Event( name, location, details, date)
-            eventAdapter.notifyItemChanged(position)
 
-        }
 
         newEvent.setOnClickListener{
             eventList.add(Event(" "," "," "," "))
             val intent= Intent(this, EditEventActivity::class.java).apply{
-                putExtra("position", eventList.size)
+                putExtra("position", eventList.size-1)
             }
             startActivity(intent)
+        }
+
+        if (name != null && position != null && details!=null && date!=null) {
+            eventList[position] = Event( name, location, details, date)
+            eventAdapter.notifyItemChanged(position)
+
         }
     }
     private fun populateEventList() {
