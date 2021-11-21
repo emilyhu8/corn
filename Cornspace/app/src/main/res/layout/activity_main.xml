@@ -15,31 +15,38 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:layout_marginTop="10dp"
         >
         <Button
             android:id="@+id/homeButton"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:text="Home"
+            android:background="@drawable/roundedbutton"
             />
         <Button
             android:id="@+id/eventButton"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:text="Events"
+            android:background="@drawable/roundedbutton"
+            android:layout_marginLeft="10dp"
             />
         <Button
             android:id="@+id/noteButton"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:text="Notes"
+            android:background="@drawable/roundedbutton"
+            android:layout_marginLeft="10dp"
             />
         <Button
-
             android:id="@+id/linkButton"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:text="Links"
+            android:background="@drawable/roundedbutton"
+            android:layout_marginLeft="10dp"
             />
 
     </LinearLayout>
