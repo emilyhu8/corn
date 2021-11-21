@@ -11,6 +11,9 @@ import java.util.*
 class EventsActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var newEvent: Button
+    private lateinit var linkButton: Button
+    private lateinit var homeButton: Button
+    private lateinit var noteButton: Button
 
     private val names=listOf("Homecoming", "Christmas")
     private val locations=listOf("field", "home")
@@ -22,12 +25,30 @@ class EventsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_events)
 
+        linkButton=findViewById(R.id.linkButton)
+        homeButton=findViewById(R.id.homeButton)
+        noteButton=findViewById(R.id.noteButton)
+
         recyclerView=findViewById(R.id.recyclerView)
         recyclerView.setHasFixedSize(true)
 
 
 
         newEvent=findViewById(R.id.newEventButton)
+
+        linkButton.setOnClickListener{
+            val intent= Intent(this, LinksActivity::class.java)
+            startActivity(intent)
+        }
+
+        homeButton.setOnClickListener{
+            val intent=Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        noteButton.setOnClickListener{
+
+        }
 
         //populateEventList()
         for (i in names.indices)

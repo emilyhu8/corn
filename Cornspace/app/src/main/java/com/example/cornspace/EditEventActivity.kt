@@ -25,6 +25,11 @@ class EditEventActivity : AppCompatActivity() {
     private lateinit var details: TextView
     private lateinit var date: TextView
 
+    private lateinit var eventButton: Button
+    private lateinit var homeButton: Button
+    private lateinit var noteButton: Button
+    private lateinit var linkButton:Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -45,11 +50,33 @@ class EditEventActivity : AppCompatActivity() {
         details=findViewById(R.id.details)
         date=findViewById(R.id.date)
 
+        eventButton=findViewById(R.id.eventButton)
+        homeButton=findViewById(R.id.homeButton)
+        noteButton=findViewById(R.id.noteButton)
+        linkButton=findViewById(R.id.linkButton)
+
         name.text=inputName
         location.text=inputLocation
         details.text=inputDetails
         date.text=inputDate
 
+        homeButton.setOnClickListener{
+            val intent= Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        eventButton.setOnClickListener{
+            val intent= Intent(this, EventsActivity::class.java)
+            startActivity(intent)
+        }
+
+        noteButton.setOnClickListener{
+
+        }
+        linkButton.setOnClickListener{
+            val intent=Intent(this, LinksActivity::class.java)
+            startActivity(intent)
+        }
         saveButton.setOnClickListener{
             val input1 = editName?.text.toString().trim()
             val input2 = editLocation?.text.toString().trim()
