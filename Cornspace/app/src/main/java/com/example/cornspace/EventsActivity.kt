@@ -3,10 +3,13 @@ package com.example.cornspace
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.util.Log.d
 import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import java.util.*
+import java.util.logging.Logger
 
 class EventsActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
@@ -15,14 +18,18 @@ class EventsActivity : AppCompatActivity() {
     private lateinit var homeButton: Button
     private lateinit var noteButton: Button
 
-    private val names=listOf("Homecoming", "Christmas")
-    private val locations=listOf("field", "home")
-    private val details=listOf("","")
-    private val dates=listOf("Sept 15", "Dec 25")
-    private val eventList=mutableListOf<Event>()
+    private var names=listOf("Homecoming", "Christmas")
+    private var locations=listOf("field", "home")
+    private var details=listOf("","")
+    private var dates=listOf("Sept 15", "Dec 25")
+
+    private var eventList=mutableListOf<Event>()
+
+    private var eventAdapter=EventAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d("Emily", "onCreate")
         setContentView(R.layout.activity_events)
 
         linkButton=findViewById(R.id.linkButton)
@@ -35,6 +42,9 @@ class EventsActivity : AppCompatActivity() {
 
 
         newEvent=findViewById(R.id.newEventButton)
+
+        for (i in names.indices)
+            Repository.localEventList.add(Event(names[i], locations[i], details[i], dates[i]))
 
         linkButton.setOnClickListener{
             val intent= Intent(this, LinksActivity::class.java)
@@ -50,13 +60,32 @@ class EventsActivity : AppCompatActivity() {
 
         }
 
-        //populateEventList()
-        for (i in names.indices)
-            eventList.add(Event(names[i], locations[i], details[i], dates[i]))
-
-        val eventAdapter=EventAdapter(eventList)
         recyclerView.adapter=eventAdapter
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        newEvent.setOnClickListener{
+
+            Repository.localEventList.add(Event("", "", "", ""))
+
+            val intent= Intent(this, EditEventActivity::class.java).apply {
+                putExtra("position", Repository.localEventList.size-1)
+
+            }
+            startActivity(intent)
+        }
+
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        Log.d("Emily","onNewIntent")
+        this.intent = intent
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("Emily", "onResume")
+
+        //populateEventList()
 
         val name = intent.extras?.getString("name")
         val location=intent.extras?.getString("location")
@@ -64,21 +93,17 @@ class EventsActivity : AppCompatActivity() {
         val date=intent.extras?.getString("date")
         val position = intent.extras?.getInt("position")
 
-
-
-        newEvent.setOnClickListener{
-            eventList.add(Event(" "," "," "," "))
-            val intent= Intent(this, EditEventActivity::class.java).apply{
-                putExtra("position", eventList.size-1)
-            }
-            startActivity(intent)
-        }
-
         if (name != null && position != null && details!=null && date!=null) {
-            eventList[position] = Event( name, location, details, date)
-            eventAdapter.notifyItemChanged(position)
+            Repository.localEventList[position] = Event( name, location, details, date)
+            eventAdapter = EventAdapter()
+            recyclerView.adapter=eventAdapter
 
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("Emily", "onDestroy")
     }
     private fun populateEventList() {
 
@@ -92,9 +117,11 @@ class EventsActivity : AppCompatActivity() {
          */
 
     }
-
+/*
     private fun updateNote(newEventName: String, newEventLocation: String, newEventDetails: String, newEventDate: String) {
         val newEvent = Event(newEventName, newEventLocation, newEventDetails, newEventDate)
         Repository.updateEvent(newEvent)
     }
+
+ */
 }

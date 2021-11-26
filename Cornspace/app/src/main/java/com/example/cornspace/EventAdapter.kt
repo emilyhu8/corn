@@ -8,7 +8,7 @@ import android.widget.DatePicker
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class EventAdapter(private val events: MutableList<Event>) : RecyclerView.Adapter<EventAdapter.MyViewHolder>() {
+class EventAdapter() : RecyclerView.Adapter<EventAdapter.MyViewHolder>() {
 
     class MyViewHolder internal constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val eventName: TextView=itemView.findViewById(R.id.eventName)
@@ -23,7 +23,7 @@ class EventAdapter(private val events: MutableList<Event>) : RecyclerView.Adapte
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val event = events[position]
+        val event = Repository.localEventList[position]
         holder.eventName.text=event.name
         holder.eventLocation.text = event.location
         holder.eventDetails.text=event.details
@@ -45,6 +45,6 @@ class EventAdapter(private val events: MutableList<Event>) : RecyclerView.Adapte
     }
 
     override fun getItemCount(): Int {
-        return events.size
+        return Repository.localEventList.size
     }
 }

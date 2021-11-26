@@ -27,6 +27,7 @@ class Repository private constructor(){
 
         var localEventList = mutableListOf<Event>()
 
+
         private val client = OkHttpClient()
 
         fun fetchEventsList(successHandler: ((List<Event>) -> Unit)? = null) {
@@ -68,6 +69,10 @@ class Repository private constructor(){
                 }
                 Log.d("NETWORK RESPONSE", it.body!!.string())
             }
+        }
+
+        fun initializeEventList(){
+
         }
     }
 }

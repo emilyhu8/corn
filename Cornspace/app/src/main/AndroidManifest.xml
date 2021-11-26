@@ -17,6 +17,7 @@
             android:exported="false" />
         <activity
             android:name=".EventsActivity"
+            android:launchMode= "singleInstance"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
