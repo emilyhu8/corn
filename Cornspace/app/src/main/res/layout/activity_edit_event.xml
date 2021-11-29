@@ -15,8 +15,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:scrollbarAlwaysDrawVerticalTrack="true"
-        android:layout_marginTop="10dp"
-        >
+        android:layout_marginTop="10dp">
         <Button
             android:id="@+id/homeButton"
             android:layout_width="wrap_content"
@@ -143,58 +142,95 @@
         android:id="@+id/linearlayout5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@id/linearLayout4"
-        app:layout_goneMarginTop="20dp"
-        android:layout_marginLeft="20dp">
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/event_background"
+        android:padding="@dimen/_10sdp">
 
         <EditText
             android:id="@+id/editName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
             android:hint="Edit Name"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
+            android:textColor="#999999"
+            android:textColorHint="@color/ColorGray"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
-
-        <EditText
-            android:id="@+id/editDetails"
-            android:layout_width="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+            android:layout_marginLeft="@dimen/_30sdp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
-            android:hint="Edit Details"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editDate" />
-
-        <EditText
-            android:id="@+id/editLocation"
-            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_20sdp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_calendar_today_24">
+            </ImageView>
+            <EditText
+                android:id="@+id/editDate"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:hint="Edit Date"
+                android:textColor="#999999"
+                android:textColorHint="@color/ColorGray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editLocation" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
-            android:hint="Edit Location"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editName" />
-
-        <EditText
-            android:id="@+id/editDate"
-            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_20sdp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_location_on_24">
+            </ImageView>
+            <EditText
+                android:id="@+id/editLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:hint="Edit Location"
+                android:textColor="#999999"
+                android:textColorHint="@color/ColorGray"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editName" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
-            android:hint="Edit Date"
-            android:textColorHint="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editLocation" />
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_info_24"
+                android:layout_gravity="center_vertical">
+            </androidx.constraintlayout.utils.widget.ImageFilterView>
+
+            <EditText
+                android:id="@+id/editDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:hint="Edit Details"
+                android:textColor="#999999"
+                android:textColorHint="@color/ColorGray"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/_10sdp"/>
+
+        </LinearLayout>
+
+
     </LinearLayout>
 
     <Button
@@ -207,8 +243,5 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearlayout5"
         />
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
