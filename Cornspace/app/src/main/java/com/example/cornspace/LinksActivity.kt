@@ -1,11 +1,11 @@
 package com.example.cornspace
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.method.LinkMovementMethod
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import com.example.cornspace.notes.NotesActivity
 
 class LinksActivity : AppCompatActivity() {
     private lateinit var link1: TextView
@@ -47,7 +47,8 @@ class LinksActivity : AppCompatActivity() {
         }
 
         noteButton.setOnClickListener{
-
+            val intent= Intent(this, NotesActivity::class.java)
+            startActivity(intent)
         }
 
     }

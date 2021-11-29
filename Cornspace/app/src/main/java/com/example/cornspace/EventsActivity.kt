@@ -1,15 +1,15 @@
 package com.example.cornspace
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.util.Log.d
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import java.util.*
-import java.util.logging.Logger
+import com.example.cornspace.notes.NotesActivity
 
 class EventsActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
@@ -39,8 +39,6 @@ class EventsActivity : AppCompatActivity() {
         recyclerView=findViewById(R.id.recyclerView)
         recyclerView.setHasFixedSize(true)
 
-
-
         newEvent=findViewById(R.id.newEventButton)
 
         for (i in names.indices)
@@ -57,7 +55,8 @@ class EventsActivity : AppCompatActivity() {
         }
 
         noteButton.setOnClickListener{
-
+            val intent= Intent(this, NotesActivity::class.java)
+            startActivity(intent)
         }
 
         recyclerView.adapter=eventAdapter
@@ -72,6 +71,10 @@ class EventsActivity : AppCompatActivity() {
             }
             startActivity(intent)
         }
+
+        val decorator = DividerItemDecoration(applicationContext, LinearLayoutManager.VERTICAL)
+        decorator.setDrawable(ContextCompat.getDrawable(applicationContext,R.drawable.divider)!!)
+        recyclerView.addItemDecoration(decorator)
 
     }
 
