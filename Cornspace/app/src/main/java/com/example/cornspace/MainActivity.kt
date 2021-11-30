@@ -3,6 +3,7 @@ package com.example.cornspace
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var editName: EditText
     private lateinit var hello: TextView
     private lateinit var joke: TextView
-    private lateinit var saveName: Button
+    private lateinit var saveName: ImageButton
     private lateinit var linkButton: Button
     private lateinit var eventButton: Button
     private lateinit var noteButton: Button

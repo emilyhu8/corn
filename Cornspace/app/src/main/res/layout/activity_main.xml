@@ -89,14 +89,15 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hello" />
 
-    <Button
+    <ImageButton
         android:id="@+id/saveName"
-        android:layout_width="14dp"
-        android:layout_height="19dp"
-        android:paddingLeft="10dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         app:layout_constraintBottom_toBottomOf="@+id/editName"
         app:layout_constraintStart_toEndOf="@+id/editName"
-        app:layout_constraintTop_toTopOf="@+id/editName" />
+        app:layout_constraintTop_toTopOf="@+id/editName"
+        android:src="@drawable/corn"
+        android:background="@null"/>
 
     <TextClock
         android:id="@+id/ET_time"
