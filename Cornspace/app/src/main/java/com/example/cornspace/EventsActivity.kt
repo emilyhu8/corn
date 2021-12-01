@@ -1,5 +1,6 @@
 package com.example.cornspace
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -27,9 +28,16 @@ class EventsActivity : AppCompatActivity() {
 
     private var eventAdapter=EventAdapter()
 
+    private val USER_PREFERENCES_NAME = "user_preferences"
+    /*
+    private val Context.dataStore by preferencesDataStore(
+        name = USER_PREFERENCES_NAME
+    )
+
+     */
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d("Emily", "onCreate")
         setContentView(R.layout.activity_events)
 
         linkButton=findViewById(R.id.linkButton)
@@ -80,13 +88,13 @@ class EventsActivity : AppCompatActivity() {
 
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)
-        Log.d("Emily","onNewIntent")
+
         this.intent = intent
     }
 
     override fun onResume() {
         super.onResume()
-        Log.d("Emily", "onResume")
+
 
         //populateEventList()
 
@@ -106,8 +114,12 @@ class EventsActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d("Emily", "onDestroy")
     }
+
+
+
+
+
     private fun populateEventList() {
 
         /*

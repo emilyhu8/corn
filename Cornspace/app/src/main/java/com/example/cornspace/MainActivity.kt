@@ -32,8 +32,8 @@ class MainActivity : AppCompatActivity() {
 
 
         saveName.setOnClickListener{
-            val input = editName.text.toString().trim()
-            hello.text="Hello, "+ input+"!"
+            Repository.name = editName.text.toString().trim()
+            hello.text="Hello, "+ Repository.name+"!"
         }
 
         linkButton.setOnClickListener{
@@ -50,5 +50,10 @@ class MainActivity : AppCompatActivity() {
             val intent= Intent(this, NotesActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        hello.text="Hello, "+ Repository.name+"!"
     }
 }

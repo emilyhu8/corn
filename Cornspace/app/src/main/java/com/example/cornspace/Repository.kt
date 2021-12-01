@@ -26,6 +26,7 @@ class Repository private constructor(){
 
 
         var localEventList = mutableListOf<Event>()
+        var name: String=""
 
 
         private val client = OkHttpClient()
