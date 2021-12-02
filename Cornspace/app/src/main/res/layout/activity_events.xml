@@ -63,10 +63,10 @@
 
     <Button
         android:id="@+id/newEventButton"
-        android:text="@string/new_event"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
+        android:text="@string/new_event"
         app:layout_constraintBottom_toTopOf="@id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/ic_add"

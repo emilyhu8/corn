@@ -18,22 +18,17 @@ class EventsActivity : AppCompatActivity() {
     private lateinit var homeButton: ImageButton
     private lateinit var noteButton: ImageButton
 
-    private var names=listOf("Homecoming", "Christmas")
-    private var locations=listOf("field", "home")
-    private var details=listOf("","")
-    private var dates=listOf("Sept 15", "Dec 25")
+    private var names=listOf("Homecoming Game", "Hanukkah", "Christmas", "February Break")
+    private var locations=listOf("Schoellkopf Field", "Home", "Home", "Home")
+    private var details=listOf("VMI","National Holiday", "National Holiday", "Short break!")
+    private var dates=listOf("Sept 19", "Nov 28-Dec 6","Dec 25", "Feb 26-March 2")
 
-    private var eventList=mutableListOf<Event>()
+
 
     private var eventAdapter=EventAdapter()
 
-    private val USER_PREFERENCES_NAME = "user_preferences"
-    /*
-    private val Context.dataStore by preferencesDataStore(
-        name = USER_PREFERENCES_NAME
-    )
 
-     */
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

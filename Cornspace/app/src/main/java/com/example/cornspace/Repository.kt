@@ -18,7 +18,7 @@ import javax.security.auth.callback.Callback
 
 class Repository private constructor(){
     companion object {
-        private const val BASE_URL = "http://143.198.115.54:8080/"
+        private const val BASE_URL = "https://v2.jokeapi.dev"
         private val moshi = Moshi.Builder().addLast(KotlinJsonAdapterFactory()).build()
         private val eventJsonAdapter = moshi.adapter(Event::class.java)
         //private val eventListType = Types.newParameterizedType(List::class.java, Event::class.java)
@@ -30,7 +30,19 @@ class Repository private constructor(){
 
 
         private val client = OkHttpClient()
+/*
+        fun fetchJoke(successHandler: ((List<Event>) -> Unit)?=null) {
+            val requestGet = Request.Builder().url(BASE_URL + "posts/").build()
+            client.newCall(requestGet).enqueue(object : okhttp3.Callback {
+                override fun onFailure(call: okhttp3.Call, e: IOException) {
+                    e.printStackTrace()
+                }
+            })
+        }'
 
+ */
+
+                /*
         fun fetchEventsList(successHandler: ((List<Event>) -> Unit)? = null) {
             val requestGet = Request.Builder().url(BASE_URL + "events/").build()
             /*
@@ -76,4 +88,8 @@ class Repository private constructor(){
 
         }
     }
+
+                 */
+    }
 }
+

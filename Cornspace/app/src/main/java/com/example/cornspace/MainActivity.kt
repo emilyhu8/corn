@@ -1,12 +1,30 @@
 package com.example.cornspace
 
+import android.content.ContentValues.TAG
 import android.content.Intent
+import android.location.GnssAntennaInfo
 import android.os.Bundle
+import android.util.Log
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.cornspace.notes.NotesActivity
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.Response
+import java.io.IOException
+import org.json.JSONException
+
+
+
+import org.json.JSONObject
+
+import org.json.JSONArray
+import java.security.AccessController.getContext
+import javax.xml.transform.ErrorListener
+import javax.xml.transform.TransformerException
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var editName: EditText
@@ -16,6 +34,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var linkButton: ImageButton
     private lateinit var eventButton: ImageButton
     private lateinit var noteButton: ImageButton
+
+    private val baseURL = "https://v2.jokeapi.dev"
+    private val client = OkHttpClient()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,11 +71,17 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
+
     }
 
     override fun onResume() {
         super.onResume()
         hello.text="Hello, "+ Repository.name+"!"
     }
+
+    private fun pickJoke() {
+
+    }
+
 
 }
