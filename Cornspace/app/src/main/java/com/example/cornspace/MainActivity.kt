@@ -1,34 +1,21 @@
 package com.example.cornspace
 
-import android.content.ContentValues.TAG
+
+
 import android.content.Intent
-import android.location.GnssAntennaInfo
 import android.os.Bundle
-import android.util.Log
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.cornspace.notes.NotesActivity
 import okhttp3.OkHttpClient
-import okhttp3.Request
-import okhttp3.Response
-import java.io.IOException
-import org.json.JSONException
-
-
-
-import org.json.JSONObject
-
-import org.json.JSONArray
-import java.security.AccessController.getContext
-import javax.xml.transform.ErrorListener
-import javax.xml.transform.TransformerException
 
 
 class MainActivity : AppCompatActivity() {
     private lateinit var editName: EditText
     private lateinit var hello: TextView
+    private lateinit var addName: TextView
     private lateinit var joke: TextView
     private lateinit var saveName: ImageButton
     private lateinit var linkButton: ImageButton
@@ -49,13 +36,15 @@ class MainActivity : AppCompatActivity() {
         linkButton=findViewById(R.id.linkButton)
         eventButton=findViewById(R.id.eventButton)
         noteButton=findViewById(R.id.noteButton)
+        addName=findViewById(R.id.addName)
 
         val rnds = (0..2).random()
         joke.text=jokes[rnds]
 
         saveName.setOnClickListener{
             Repository.name = editName.text.toString().trim()
-            hello.text="Hello, "+ Repository.name+"!"
+            hello.text="Hello"
+            addName.text = Repository.name+"!"
         }
 
         linkButton.setOnClickListener{

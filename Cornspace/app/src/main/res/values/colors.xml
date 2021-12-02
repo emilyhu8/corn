@@ -29,4 +29,15 @@
     <color name="ColorGreenNote">#0aebaf</color>
     <color name="ColorOrangeNote">#ff7746</color>
     <color name="ColorBlackNote">#202734</color>
+
+    <color name="red1">#811112</color>
+    <color name="red2">#881D1D</color>
+    <color name="red3">#AC3834</color>
+    <color name="beige1">#B29576</color>
+    <color name="beige2">#CAB7A1</color>
+
+
+
+
+
 </resources>

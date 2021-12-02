@@ -4,8 +4,99 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/beige2"
     tools:context=".MainActivity">
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/beige1back"
+        android:padding="20dp">
+        <TextView
+            android:id="@+id/hello"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hello"
+            android:textColor="@color/white"
+            android:textSize="50dp"
+            app:layout_constraintVertical_bias="0.147" />
+        <TextView
+            android:id="@+id/addName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@null"
+            android:textColor="@color/white"
+            android:textSize="50dp" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/corn"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout2"
+        android:layout_marginRight="30dp">
+    </ImageView>
+
+
+    <TextClock
+        android:id="@+id/ET_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:format24Hour="MMM dd, yyyy k:mm"
+        android:textColor="@color/red1"
+        android:textSize="50sp"
+        android:timeZone="America/New_York"
+        app:layout_constraintBottom_toTopOf="@+id/editName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.27"
+        android:layout_marginTop="60dp"/>
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/edit_name"
+        android:textColor="@color/red1"
+        android:textColorHint="@color/beige1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ET_time"
+        android:layout_marginTop="60dp"/>
+
+    <ImageButton
+        android:id="@+id/saveName"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/editName"
+        app:layout_constraintStart_toEndOf="@+id/editName"
+        app:layout_constraintTop_toTopOf="@+id/editName"
+        android:src="@drawable/corn"
+        android:background="@null"
+        app:tint="@color/beige1" />
+
+    <TextView
+        android:id="@+id/joke"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/joke_of_the_day"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editName"
+        app:layout_constraintVertical_bias="0.386"
+        android:background="@drawable/beige1back"
+        android:padding="15dp"/>
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -15,8 +106,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:scrollbarAlwaysDrawVerticalTrack="true"
-        android:background="@color/cornell_red"
-        >
+        android:background="@color/red2">
         <ImageButton
             android:id="@+id/homeButton"
             android:layout_width="wrap_content"
@@ -50,68 +140,6 @@
             />
 
     </LinearLayout>
-
-    <EditText
-        android:id="@+id/editName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/edit_name"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hello"
-        app:layout_constraintVertical_bias="0.457" />
-
-    <TextView
-        android:id="@+id/hello"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.147" />
-
-    <TextView
-        android:id="@+id/joke"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/joke_of_the_day"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editName"
-        app:layout_constraintVertical_bias="0.386" />
-
-    <ImageButton
-        android:id="@+id/saveName"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        app:layout_constraintBottom_toBottomOf="@+id/editName"
-        app:layout_constraintStart_toEndOf="@+id/editName"
-        app:layout_constraintTop_toTopOf="@+id/editName"
-        android:src="@drawable/corn"
-        android:background="@null"/>
-
-    <TextClock
-        android:id="@+id/ET_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:format24Hour="MMM dd, yyyy k:mm"
-        android:textColor="@color/white"
-        android:textSize="48sp"
-        android:timeZone="America/New_York"
-        app:layout_constraintBottom_toTopOf="@+id/editName"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hello" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
