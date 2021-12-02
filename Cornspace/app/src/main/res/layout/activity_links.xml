@@ -71,13 +71,6 @@
             android:background="@drawable/rounded_corners"
             />
 
-        ImageView
-
-            android:layout_marginTop="10dp"
-            android:layout_width="24sp"
-            android:layout_height="24sp"
-            android:src="@drawable/ic_link"/>
-
         <TextView
             android:layout_marginTop="10dp"
             android:paddingTop="10dp"
