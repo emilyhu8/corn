@@ -2,7 +2,7 @@ package com.example.cornspace.notes
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.cornspace.EventsActivity
@@ -10,9 +10,9 @@ import com.example.cornspace.LinksActivity
 import com.example.cornspace.MainActivity
 import com.example.cornspace.R
 
-private lateinit var linkButton: Button
-private lateinit var homeButton: Button
-private lateinit var eventButton: Button
+private lateinit var linkButton: ImageButton
+private lateinit var homeButton: ImageButton
+private lateinit var eventButton: ImageButton
 class NotesActivity : AppCompatActivity() {
 
 

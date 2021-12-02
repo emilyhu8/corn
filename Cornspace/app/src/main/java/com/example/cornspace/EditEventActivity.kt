@@ -1,12 +1,12 @@
 package com.example.cornspace
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.TextView
-import org.w3c.dom.Text
+import androidx.appcompat.app.AppCompatActivity
 
 class EditEventActivity : AppCompatActivity() {
     private lateinit var editName:EditText
@@ -25,10 +25,10 @@ class EditEventActivity : AppCompatActivity() {
     private lateinit var details: TextView
     private lateinit var date: TextView
 
-    private lateinit var eventButton: Button
-    private lateinit var homeButton: Button
-    private lateinit var noteButton: Button
-    private lateinit var linkButton:Button
+    private lateinit var eventButton: ImageButton
+    private lateinit var homeButton: ImageButton
+    private lateinit var noteButton: ImageButton
+    private lateinit var linkButton:ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

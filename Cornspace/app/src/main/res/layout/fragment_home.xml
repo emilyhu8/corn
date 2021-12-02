@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
-    tools:context=".notes.NotesActivity">
+    tools:context=".notes.NotesActivity"
+    android:id="@+id/constraint_layout">
 
     <TextView
         android:id="@+id/tv1"
@@ -34,35 +35,12 @@
         android:id="@+id/search_view"/>
 
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swiperefresh"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/l1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/search_view"
-        app:layout_constraintVertical_bias="0.0">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_10sdp" />
-
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
-    <LinearLayout
-        android:id="@+id/l1"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:background="@color/colorPrimary"
-        android:padding="@dimen/_10sdp"
-        android:visibility="invisible"
-        android:orientation="horizontal">
-    </LinearLayout>
+        android:layout_height="500dp"
+        app:layout_constraintTop_toBottomOf="@id/search_view"
+        android:layout_margin="@dimen/_10sdp"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
@@ -71,8 +49,8 @@
         android:id="@+id/fabBtnCreateNote"
         android:tint="@color/ColorWhite"
         android:layout_marginEnd="@dimen/_20sdp"
-        android:layout_marginBottom="@dimen/_20sdp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="@dimen/_30sdp"
+        app:layout_constraintTop_toBottomOf="@id/recycler_view"
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/ic_add"/>
 

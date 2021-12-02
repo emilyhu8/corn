@@ -2,7 +2,7 @@ package com.example.cornspace
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.cornspace.notes.NotesActivity
@@ -16,9 +16,9 @@ class LinksActivity : AppCompatActivity() {
     private lateinit var link6: TextView
     private lateinit var link7: TextView
     private lateinit var link8: TextView
-    private lateinit var eventButton: Button
-    private lateinit var homeButton: Button
-    private lateinit var noteButton: Button
+    private lateinit var eventButton: ImageButton
+    private lateinit var homeButton: ImageButton
+    private lateinit var noteButton: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

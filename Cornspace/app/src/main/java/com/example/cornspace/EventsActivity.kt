@@ -1,10 +1,9 @@
 package com.example.cornspace
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -15,9 +14,9 @@ import com.example.cornspace.notes.NotesActivity
 class EventsActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var newEvent: Button
-    private lateinit var linkButton: Button
-    private lateinit var homeButton: Button
-    private lateinit var noteButton: Button
+    private lateinit var linkButton: ImageButton
+    private lateinit var homeButton: ImageButton
+    private lateinit var noteButton: ImageButton
 
     private var names=listOf("Homecoming", "Christmas")
     private var locations=listOf("field", "home")

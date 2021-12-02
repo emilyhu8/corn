@@ -149,13 +149,15 @@
         android:layout_marginRight="20dp"
         android:background="@drawable/event_background"
 
-    />
+    >
 
         <EditText
             android:id="@+id/editName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
             android:hint="Edit Name"
+            android:layout_marginTop="20dp"
             android:textColor="#999999"
             android:textColorHint="@color/ColorGray"
             app:layout_constraintEnd_toEndOf="parent"
@@ -166,9 +168,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-
             >
             <ImageView
                 android:layout_width="wrap_content"
@@ -191,6 +194,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             >
@@ -215,14 +220,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="20dp">
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="@dimen/_20sdp">
 
-            <androidx.constraintlayout.utils.widget.ImageFilterView
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_baseline_info_24"
                 android:layout_gravity="center_vertical">
-            </androidx.constraintlayout.utils.widget.ImageFilterView>
+            </ImageView>
 
             <EditText
                 android:id="@+id/editDetails"
@@ -235,6 +242,7 @@
                 />
 
         </LinearLayout>
+    </LinearLayout>
 
 
 
