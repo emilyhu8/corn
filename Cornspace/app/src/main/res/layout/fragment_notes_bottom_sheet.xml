@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorPrimary"
+    android:background="@color/beige1"
     android:orientation="vertical"
     app:behavior_peekHeight="40dp"
     app:layout_behavior="@string/bottom_sheet_behavior"
