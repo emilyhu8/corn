@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity() {
         noteButton.setOnClickListener{
             val intent= Intent(this, NotesActivity::class.java)
             startActivity(intent)
+
         }
     }
 
@@ -55,4 +56,5 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
         hello.text="Hello, "+ Repository.name+"!"
     }
+
 }
