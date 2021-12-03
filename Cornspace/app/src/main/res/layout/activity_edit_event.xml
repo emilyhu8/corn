@@ -226,17 +226,15 @@
 
     <Button
         android:id="@+id/sharebutton"
-        android:layout_width="0dp"
-        android:layout_height="13dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:backgroundTint="@color/red1"
         android:text="Share"
         android:textColor="@color/beige2"
         app:layout_constraintBottom_toTopOf="@+id/saveButton"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/saveButton"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearlayout5" />
 
     <LinearLayout
         android:id="@+id/linearLayout"

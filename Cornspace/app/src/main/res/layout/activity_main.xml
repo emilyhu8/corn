@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:format24Hour="MMM dd, yyyy k:mm"
         android:textColor="@color/red1"
-        android:textSize="50sp"
+        android:textSize="70sp"
         android:timeZone="America/New_York"
         app:layout_constraintBottom_toTopOf="@+id/editName"
         app:layout_constraintLeft_toLeftOf="parent"

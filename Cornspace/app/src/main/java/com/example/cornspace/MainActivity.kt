@@ -9,7 +9,6 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.cornspace.notes.NotesActivity
-import okhttp3.OkHttpClient
 
 
 class MainActivity : AppCompatActivity() {
@@ -67,7 +66,7 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         hello.text="Hello"
-        addName.text= Repository.name+"!"
+        addName.text= Repository.name + "!"
     }
 
     private fun pickJoke() {
