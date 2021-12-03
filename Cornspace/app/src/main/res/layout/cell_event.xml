@@ -29,7 +29,8 @@
                     android:layout_marginRight="20dp"
                     android:textColor="@color/beige2"
                     android:background="@drawable/red3back"
-                    android:padding="7dp"/>
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="1dp"/>
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">

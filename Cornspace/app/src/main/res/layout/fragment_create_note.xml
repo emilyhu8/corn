@@ -37,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_10sdp"
-        android:background="@null"
+        android:background="@drawable/red1back"
         android:ellipsize="end"
         android:hint="@string/notes_title"
         android:inputType="text"
@@ -62,8 +62,7 @@
         android:ellipsize="end"
         android:maxLines="1"
         android:paddingStart="@dimen/_10sdp"
-        android:textColor="@color/ColorGray"
-        android:textColorHint="@color/ColorGray"
+        android:textColor="@color/white"
         android:textSize="@dimen/_8ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -233,16 +232,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_10sdp"
-        android:background="@null"
+        android:background="@drawable/beige2back"
         android:hint="@string/notes_desc"
         android:inputType="textMultiLine"
         android:padding="@dimen/_10sdp"
-        android:textColor="@color/ColorWhite"
+        android:textColor="@color/red1"
         android:textColorHint="@color/ColorGray"
         android:textSize="@dimen/_12ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvWebLink" />
+        app:layout_constraintTop_toBottomOf="@id/tvWebLink"/>
 
     <FrameLayout
         android:layout_width="match_parent"

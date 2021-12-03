@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        hello.text="Hello, "+ Repository.name+"!"
+        hello.text="Hello" + Repository.name+"!"
     }
 
     private fun pickJoke() {

@@ -65,7 +65,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/edit_name"
-        android:textColor="@color/red1"
+        android:textColor="@color/white"
         android:textColorHint="@color/beige1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

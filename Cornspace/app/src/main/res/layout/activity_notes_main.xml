@@ -56,8 +56,14 @@
             android:background="@null"
             android:layout_marginLeft="65dp"
             />
-
     </LinearLayout>
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:src="@drawable/clocktower"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:tint="@color/white"
+        tools:layout_editor_absoluteX="16dp"></ImageView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
