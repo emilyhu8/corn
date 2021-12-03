@@ -47,7 +47,11 @@
         <entry key="app/src/main/res/layout/activity_events.xml" value="0.115625" />
         <entry key="app/src/main/res/layout/activity_links.xml" value="0.115625" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.12708333333333333" />
+        <entry key="app/src/main/res/layout/activity_notes_main.xml" value="0.1956140350877193" />
         <entry key="app/src/main/res/layout/cell_event.xml" value="0.115625" />
+        <entry key="app/src/main/res/layout/fragment_create_note.xml" value="0.1956140350877193" />
+        <entry key="app/src/main/res/layout/fragment_notes_bottom_sheet.xml" value="0.1956140350877193" />
+        <entry key="app/src/main/res/layout/item_rv_notes.xml" value="0.1956140350877193" />
       </map>
     </option>
   </component>
