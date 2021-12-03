@@ -33,69 +33,69 @@ class EditEventActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val position=intent.extras?.getInt("position")
-        inputName=intent.getStringExtra("name").toString()
-        inputLocation=intent.getStringExtra("location").toString()
-        inputDetails=intent.getStringExtra("details").toString()
-        inputDate=intent.getStringExtra("date").toString()
+        val position = intent.extras?.getInt("position")
+        inputName = intent.getStringExtra("name").toString()
+        inputLocation = intent.getStringExtra("location").toString()
+        inputDetails = intent.getStringExtra("details").toString()
+        inputDate = intent.getStringExtra("date").toString()
 
         setContentView(R.layout.activity_edit_event)
-        editName=findViewById(R.id.editName)
-        editLocation=findViewById(R.id.editLocation)
-        editDetails=findViewById(R.id.editDetails)
-        editDate=findViewById(R.id.editDate)
-        saveButton=findViewById(R.id.saveButton)
-        name=findViewById(R.id.name)
-        location=findViewById(R.id.location)
-        details=findViewById(R.id.details)
-        date=findViewById(R.id.date)
+        editName = findViewById(R.id.editName)
+        editLocation = findViewById(R.id.editLocation)
+        editDetails = findViewById(R.id.editDetails)
+        editDate = findViewById(R.id.editDate)
+        saveButton = findViewById(R.id.saveButton)
+        name = findViewById(R.id.name)
+        location = findViewById(R.id.location)
+        details = findViewById(R.id.details)
+        date = findViewById(R.id.date)
 
-        eventButton=findViewById(R.id.eventButton)
-        homeButton=findViewById(R.id.homeButton)
-        noteButton=findViewById(R.id.noteButton)
-        linkButton=findViewById(R.id.linkButton)
+        eventButton = findViewById(R.id.eventButton)
+        homeButton = findViewById(R.id.homeButton)
+        noteButton = findViewById(R.id.noteButton)
+        linkButton = findViewById(R.id.linkButton)
 
-        name.text=inputName
-        location.text=inputLocation
-        details.text=inputDetails
-        date.text=inputDate
+        name.text = inputName
+        location.text = inputLocation
+        details.text = inputDetails
+        date.text = inputDate
 
-        homeButton.setOnClickListener{
-            val intent= Intent(this, MainActivity::class.java)
+        homeButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
-        eventButton.setOnClickListener{
-            val intent= Intent(this, EventsActivity::class.java)
+        eventButton.setOnClickListener {
+            val intent = Intent(this, EventsActivity::class.java)
             startActivity(intent)
         }
 
-        noteButton.setOnClickListener{
+        noteButton.setOnClickListener {
 
         }
-        linkButton.setOnClickListener{
-            val intent=Intent(this, LinksActivity::class.java)
+        linkButton.setOnClickListener {
+            val intent = Intent(this, LinksActivity::class.java)
             startActivity(intent)
         }
-        saveButton.setOnClickListener{
+        saveButton.setOnClickListener {
             val input1 = editName?.text.toString().trim()
             val input2 = editLocation?.text.toString().trim()
             val input3 = editDetails?.text.toString().trim()
             val input4 = editDate?.text.toString().trim()
-            if (input1.isNullOrBlank()==false) {
-                inputName=input1
+            if (input1.isNullOrBlank() == false) {
+                inputName = input1
             }
-            if (input2.isNullOrBlank()==false) {
-                 inputLocation=input2
+            if (input2.isNullOrBlank() == false) {
+                inputLocation = input2
             }
-            if (input3.isNullOrBlank()==false) {
-                 inputDetails=input3
+            if (input3.isNullOrBlank() == false) {
+                inputDetails = input3
             }
-            if (input4.isNullOrBlank()==false) {
-                inputDate=input4
+            if (input4.isNullOrBlank() == false) {
+                inputDate = input4
             }
 
-            val intent= Intent(this, EventsActivity::class.java).apply{
+            val intent = Intent(this, EventsActivity::class.java).apply {
                 putExtra("position", position)
                 putExtra("name", inputName)
                 putExtra("location", inputLocation)
@@ -106,7 +106,17 @@ class EditEventActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
+        val sharebutton: Button = findViewById(R.id.sharebutton)
+        sharebutton.setOnClickListener() {
+            val message = "Check out this song: " + inputName
+            val shareIntent = Intent()
+            shareIntent.action = Intent.ACTION_SEND
+            shareIntent.type = "text/plain"
+            shareIntent.putExtra(Intent.EXTRA_TEXT, message)
+            shareIntent.putExtra(Intent.EXTRA_SUBJECT, "subject here")
+            startActivity(Intent.createChooser(shareIntent, "Share text via"))
 
 
+        }
     }
 }
