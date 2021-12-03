@@ -18,7 +18,7 @@ import javax.security.auth.callback.Callback
 
 class Repository private constructor() {
     companion object {
-        private const val BASE_URL = "https://cornbackend.herokuapp.com/joke/"
+        private const val BASE_URL = "https://cornspacebackend.herokuapp.com/joke/"
         private val moshi = Moshi.Builder().addLast(KotlinJsonAdapterFactory()).build()
         private val jokeJsonAdapter = moshi.adapter(Joke::class.java)
         private val jokeListType =newParameterizedType(List::class.java, Joke::class.java)
