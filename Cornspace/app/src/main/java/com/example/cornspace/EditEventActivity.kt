@@ -108,7 +108,7 @@ class EditEventActivity : AppCompatActivity() {
         }
         val sharebutton: Button = findViewById(R.id.sharebutton)
         sharebutton.setOnClickListener() {
-            val message = "Check out this song: " + inputName
+            val message = "Check out this event: " + inputName
             val shareIntent = Intent()
             shareIntent.action = Intent.ACTION_SEND
             shareIntent.type = "text/plain"
