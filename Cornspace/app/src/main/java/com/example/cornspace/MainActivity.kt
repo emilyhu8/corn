@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity() {
         pickJoke()
 
 
+
         saveName.setOnClickListener{
             Repository.name = editName.text.toString().trim()
             hello.text="Hello"
@@ -59,13 +60,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
-        val rnds = (0..2).random()
-        joke.text=Repository.jokes[rnds]
+
     }
 
     override fun onResume() {
         super.onResume()
-        hello.text="Hello"
+        hello.text=getString(R.string.Hello)
         addName.text= Repository.name + "!"
     }
 
@@ -73,8 +73,8 @@ class MainActivity : AppCompatActivity() {
 
             Repository.fetchJoke(successHandler = {
                 runOnUiThread {
-                    val rnds = (0..2).random()
-                    joke.text=Repository.jokeList[rnds].toString()
+
+                    joke.text=Repository.joke.data
 
                 }})
 

@@ -18,17 +18,17 @@ class Repository private constructor() {
         private val jokeListType =newParameterizedType(List::class.java, Joke::class.java)
         private val jokeListJsonAdapter: JsonAdapter<List<Joke>> = moshi.adapter(jokeListType)
 
-        var jokeList= mutableListOf<Joke>()
+        lateinit var joke: Joke
         var localEventList = mutableListOf<Event>()
         var name: String = "friend"
 
-        var jokes=listOf("How does the moon cut his hair? He eclipses it!", "Where do fruits go on vacation? Pear-is!", "What does a sprinter eat before a race? Nothing, they fast!")
+        //var jokes=listOf("How does the moon cut his hair? He eclipses it!", "Where do fruits go on vacation? Pear-is!", "What does a sprinter eat before a race? Nothing, they fast!")
 
 
         private val client = OkHttpClient()
 
-        fun fetchJoke(successHandler: ((List<Joke>) -> Unit)? = null) {
-            val requestGet = Request.Builder().url(BASE_URL + "posts/").build()
+        fun fetchJoke(successHandler: ((Joke) -> Unit)? = null) {
+            val requestGet = Request.Builder().url(BASE_URL).build()
             client.newCall(requestGet).enqueue(object : okhttp3.Callback {
                 override fun onFailure(call: okhttp3.Call, e: IOException) {
                     e.printStackTrace()
@@ -40,17 +40,26 @@ class Repository private constructor() {
                             Log.e("NETWORK ERROR", it.message)
                             throw IOException("Post unsuccessful")
                         }
-                        val joke = response.body!!.string()
-                        jokeList = jokeListJsonAdapter.fromJson(joke)!! as MutableList<Joke>
-                        if (successHandler != null) {
-                            //pass the newly fetched list from cloud to UI
-                            successHandler(jokeList)
+                        val responseBody = response.body
+                        responseBody?.let {
+                            val bodyString = responseBody.string()
+                            try {
+                                jokeJsonAdapter.fromJson(bodyString)?.let {
+                                    joke = it
+                                    if (successHandler != null) {
+                                        //pass the newly fetched list from cloud to UI
+                                        successHandler(joke)
+                                    }
+                                }
+                            }
+                            catch(e: Exception) {
+                                e.printStackTrace()
+                            }
                         }
                     }
                 }
             })
         }
-
 
     }
 }
