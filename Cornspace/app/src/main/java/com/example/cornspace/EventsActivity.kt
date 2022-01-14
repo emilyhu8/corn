@@ -11,12 +11,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cornspace.notes.NotesActivity
 
-class EventsActivity : AppCompatActivity() {
+class EventsActivity : BaseActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var newEvent: Button
-    private lateinit var linkButton: ImageButton
-    private lateinit var homeButton: ImageButton
-    private lateinit var noteButton: ImageButton
+
 
     private var names=listOf("Homecoming Game", "Hanukkah", "Christmas", "February Break")
     private var locations=listOf("Schoellkopf Field", "Home", "Home", "Home")
@@ -34,9 +32,7 @@ class EventsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_events)
 
-        linkButton=findViewById(R.id.linkButton)
-        homeButton=findViewById(R.id.homeButton)
-        noteButton=findViewById(R.id.noteButton)
+
 
         recyclerView=findViewById(R.id.recyclerView)
         recyclerView.setHasFixedSize(true)
@@ -46,20 +42,6 @@ class EventsActivity : AppCompatActivity() {
         for (i in names.indices)
             Repository.localEventList.add(Event(names[i], locations[i], details[i], dates[i]))
 
-        linkButton.setOnClickListener{
-            val intent= Intent(this, LinksActivity::class.java)
-            startActivity(intent)
-        }
-
-        homeButton.setOnClickListener{
-            val intent=Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
-
-        noteButton.setOnClickListener{
-            val intent= Intent(this, NotesActivity::class.java)
-            startActivity(intent)
-        }
 
         recyclerView.adapter=eventAdapter
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
@@ -114,23 +96,5 @@ class EventsActivity : AppCompatActivity() {
 
 
 
-    private fun populateEventList() {
 
-        /*
-        Repository.fetchEventsList(successHandler = {
-            runOnUiThread{
-                eventAdapter = EventAdapter(it)
-                recyclerView.adapter = eventAdapter
-            }})
-
-         */
-
-    }
-/*
-    private fun updateNote(newEventName: String, newEventLocation: String, newEventDetails: String, newEventDate: String) {
-        val newEvent = Event(newEventName, newEventLocation, newEventDetails, newEventDate)
-        Repository.updateEvent(newEvent)
-    }
-
- */
 }

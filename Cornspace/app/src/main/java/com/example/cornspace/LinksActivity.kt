@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.cornspace.notes.NotesActivity
 
-class LinksActivity : AppCompatActivity() {
+class LinksActivity : BaseActivity() {
     private lateinit var link1: TextView
     private lateinit var link2: TextView
     private lateinit var link3: TextView
@@ -16,9 +16,7 @@ class LinksActivity : AppCompatActivity() {
     private lateinit var link6: TextView
     private lateinit var link7: TextView
     private lateinit var link8: TextView
-    private lateinit var eventButton: ImageButton
-    private lateinit var homeButton: ImageButton
-    private lateinit var noteButton: ImageButton
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,24 +30,7 @@ class LinksActivity : AppCompatActivity() {
         link7=findViewById(R.id.link7)
         link8=findViewById(R.id.link8)
 
-        eventButton=findViewById(R.id.eventButton)
-        homeButton=findViewById(R.id.homeButton)
-        noteButton=findViewById(R.id.noteButton)
 
-        homeButton.setOnClickListener{
-            val intent= Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
-
-        eventButton.setOnClickListener{
-            val intent= Intent(this, EventsActivity::class.java)
-            startActivity(intent)
-        }
-
-        noteButton.setOnClickListener{
-            val intent= Intent(this, NotesActivity::class.java)
-            startActivity(intent)
-        }
 
     }
 }

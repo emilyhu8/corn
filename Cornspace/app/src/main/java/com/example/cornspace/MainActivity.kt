@@ -11,15 +11,13 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.cornspace.notes.NotesActivity
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
     private lateinit var editName: EditText
     private lateinit var hello: TextView
     private lateinit var addName: TextView
     private lateinit var joke: TextView
     private lateinit var saveName: ImageButton
-    private lateinit var linkButton: ImageButton
-    private lateinit var eventButton: ImageButton
-    private lateinit var noteButton: ImageButton
+
 
 
 
@@ -30,9 +28,6 @@ class MainActivity : AppCompatActivity() {
         hello=findViewById(R.id.hello)
         joke=findViewById(R.id.joke)
         saveName=findViewById(R.id.saveName)
-        linkButton=findViewById(R.id.linkButton)
-        eventButton=findViewById(R.id.eventButton)
-        noteButton=findViewById(R.id.noteButton)
         addName=findViewById(R.id.addName)
 
         pickJoke()
@@ -45,21 +40,7 @@ class MainActivity : AppCompatActivity() {
             addName.text = Repository.name+"!"
         }
 
-        linkButton.setOnClickListener{
-            val intent= Intent(this, LinksActivity::class.java)
-            startActivity(intent)
-        }
 
-        eventButton.setOnClickListener{
-            val intent=Intent(this, EventsActivity::class.java)
-            startActivity(intent)
-        }
-
-        noteButton.setOnClickListener{
-            val intent= Intent(this, NotesActivity::class.java)
-            startActivity(intent)
-
-        }
 
     }
 
